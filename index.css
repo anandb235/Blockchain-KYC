@@ -1,0 +1,24 @@
+header {
+    background-image: url("./assets/bg.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: no-scoll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: white;
+    height: 100vh;
+}
+
+header .intro-text {
+    padding-top: 16em;
+    padding-bottom: 50px;
+}
+
+header .intro-heading{
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 0.7em;
+}
