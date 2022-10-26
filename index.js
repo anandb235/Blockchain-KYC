@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var web3 = new web3(new web3.providers.HttpProvider("http://localhost:8545"));
+=======
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+>>>>>>> 7c4fb4ae023ad067816f85a0a208bb90f5ae416b
 var kycContract = web3.eth.contract(abi);
 var deployedContract = kycContract.new({
     data: binaryData,
