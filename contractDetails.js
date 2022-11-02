@@ -1,6 +1,6 @@
 //  the address of the smart contract
 
-//var contractAddress = 'ReplaceContractAddressHere';
+// var contractAddress = '0xe1b78472a1bf9a3B37D1b5bE603926752605d6E052605d6E0';
 
 //   Abstract Binary Interface of the contract code
 
@@ -28,3 +28,5 @@ var allIds = [
     "email",
     "country_res"
 ];
+
+module.exports = {allIds,contractAddress,binaryData,abi};
