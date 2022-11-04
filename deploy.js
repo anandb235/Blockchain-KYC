@@ -6,7 +6,7 @@ const bytecode = contractFile.evm.bytecode.object;
 const abi = contractFile.abi;
 const address = require('./contractDetails.js').contractAddress;
 
-
+// let deployedContract;
 let contract = new web3.eth.Contract(abi);
 let accounts = web3.eth.getAccounts().then((accounts) => {
     // console.log(accounts);
@@ -20,8 +20,7 @@ let accounts = web3.eth.getAccounts().then((accounts) => {
         gas: 4700000,
         gasPrice: '3000'
     }).then((newContractInstance) => {
-        console.log("Contract Instance Address = ", newContractInstance.options.address) // instance with the new contract address
-        // console.log(newContractInstance.options.data);
-        
+        console.log("Contract Instance Address = ", newContractInstance.options.address) // instance with the new contract address        
     });
 });
+
