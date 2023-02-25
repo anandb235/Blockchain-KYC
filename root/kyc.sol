@@ -11,6 +11,7 @@ contract kyc {
 
     struct Customer {
         string uname;
+        string phone;
         string dataHash;
         uint rating;
         uint upvotes;
@@ -174,7 +175,7 @@ contract kyc {
         //  throw error if there is overflow in uint
         if(allCustomers.length < 1)
             return 1;
-        allCustomers[allCustomers.length-1] = Customer(Uname, DataHash, 100, 0, msg.sender, "null");
+        allCustomers[allCustomers.length-1] = Customer(Uname, "null", DataHash, 100, 0, msg.sender, "null");
         updateRating(msg.sender,true);
         return 0;
     }
@@ -303,9 +304,9 @@ contract kyc {
         return "null";
     }
 
-    function checkCustomer(string Uname, string password) public payable returns(bool) {
+    function checkCustomer(string Uname, string password, string phoneNo) public payable returns(bool) {
         for(uint i = 0; i < allCustomers.length; ++ i) {
-            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, password)) {
+            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, password) && stringsEqual(allCustomers[i].phone, phoneNo)) {
                 return true;
             }
             if(stringsEqual(allCustomers[i].uname, Uname)) {
@@ -319,6 +320,16 @@ contract kyc {
         for(uint i=0;i < allCustomers.length; ++ i) {
             if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, "null")) {
                 allCustomers[i].password = password;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function setPhoneNumber(string Uname, string password, string phoneNo) public payable returns(bool) {
+        for(uint i=0;i < allCustomers.length; ++ i) {
+            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, "null" && stringsEqual(allCustomers[i].phone, "null"))) {
+                allCustomers[i].phone = phoneNo;
                 return true;
             }
         }

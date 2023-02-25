@@ -41,9 +41,25 @@
                                 <label for="password" class="youpasswd"> Password </label>
                                 <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
                             </p>
-                            <p class="signin button">
+                            
+                           
+                            <div>
+                                <label for="phoneNumber">Phone Number</label> <br>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" /> <br>
+                            </div>
+                            
+                            <div>
+                                <label for="code">Code</label> <br>
+                                <input type="text" id="code" name="code"/> <br>
+                            </div>
+                            <div id="recaptcha-container"></div>
+                            <br/>
+                            <button id="signInWithPhone">Login</button>
+                            <button id="getCode">Get Code</button>  
+
+                            <!-- <p class="signin button">
                                 <input type="submit" value="Log In" onclick="return onClickLogin()" />
-                            </p>
+                            </p> -->
                             <p class="change_link">
                                 Not a member yet ?
                                 <a href="#toregister" class="to_register">Join us</a>
@@ -66,6 +82,8 @@
                                 <label for="passwordsignup_confirm" class="youpasswd">Confirm your password</label>
                                 <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" />
                             </p>
+                            
+                            
                             <p class="signin button">
                                 <input type="submit" value="Sign up" onclick="onClickSignUp()" />
                             </p>
@@ -75,7 +93,6 @@
                             </p>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -90,6 +107,16 @@
     </script>
     <script language="JavaScript" type="text/javascript" src="./js/contractDetails.js"></script>
     <script language="JavaScript" type="text/javascript" src="./indexCustomer.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
+    
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#reserved-urls -->
+    
+        <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="./js/signup.js"></script>
 </body>
 
 </html>

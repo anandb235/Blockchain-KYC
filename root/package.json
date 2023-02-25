@@ -10,6 +10,6 @@
   "description": "",
   "dependencies": {
     "solc": "^0.4.26",
-    "web3": "^0.20.1"
+    "web3": "^0.20.7"
   }
 }
