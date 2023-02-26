@@ -1,10 +1,539 @@
 //  the address of the smart contract
 
-var contractAddress = '0xee4f633f553716a2f387821252dfba5bef3959c8';
+var contractAddress = '0x9ef89ef84986d1d7d46f7e9a9e2be310dd52c142';
 
 //   Abstract Binary Interface of the contract code
 
-var abi = [{"constant":false,"inputs":[{"name":"ethAcc","type":"address"}],"name":"getBankName","outputs":[{"name":"","type":"string"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"}],"name":"viewCustomer","outputs":[{"name":"","type":"string"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"bankAddress","type":"address"}],"name":"ifAllowed","outputs":[{"name":"","type":"bool"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"DataHash","type":"string"}],"name":"addCustomer","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"bankAddress","type":"address"},{"name":"ifallowed","type":"bool"}],"name":"allowBank","outputs":[],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"password","type":"string"}],"name":"checkCustomer","outputs":[{"name":"","type":"bool"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"ethAcc","type":"address"}],"name":"getBankKYC","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"uname","type":"string"}],"name":"getBankEth","outputs":[{"name":"","type":"address"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"bankAddress","type":"address"},{"name":"ifAdded","type":"bool"}],"name":"updateRating","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"bankAddress","type":"address"}],"name":"addRequest","outputs":[],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"}],"name":"getCustomerRating","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"eth","type":"address"}],"name":"removeBank","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"ethAcc","type":"address"}],"name":"getBankReg","outputs":[{"name":"","type":"string"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"ethAcc","type":"address"}],"name":"getBankRating","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"ifIncrease","type":"bool"}],"name":"updateRatingCustomer","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"password","type":"address"}],"name":"checkBank","outputs":[{"name":"","type":"string"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"ind","type":"uint256"}],"name":"getBankRequests","outputs":[{"name":"","type":"address"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"password","type":"string"}],"name":"setPassword","outputs":[{"name":"","type":"bool"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"uname","type":"string"},{"name":"eth","type":"address"},{"name":"regNum","type":"string"}],"name":"addBank","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[],"name":"isPartOfOrg","outputs":[{"name":"","type":"bool"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"}],"name":"getCustomerBankRating","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"},{"name":"DataHash","type":"string"}],"name":"modifyCustomer","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"}],"name":"getCustomerBankName","outputs":[{"name":"","type":"string"}],"payable":true,"type":"function"},{"constant":false,"inputs":[{"name":"Uname","type":"string"}],"name":"removeCustomer","outputs":[{"name":"","type":"uint256"}],"payable":true,"type":"function"}];
+var abi = [
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "ethAcc",
+                "type": "address"
+            }
+        ],
+        "name": "getBankName",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            }
+        ],
+        "name": "viewCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "bankAddress",
+                "type": "address"
+            }
+        ],
+        "name": "ifAllowed",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "DataHash",
+                "type": "string"
+            }
+        ],
+        "name": "addCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "bankAddress",
+                "type": "address"
+            },
+            {
+                "name": "ifallowed",
+                "type": "bool"
+            }
+        ],
+        "name": "allowBank",
+        "outputs": [],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "ethAcc",
+                "type": "address"
+            }
+        ],
+        "name": "getBankKYC",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "type": "string"
+            },
+            {
+                "name": "phone",
+                "type": "string"
+            }
+        ],
+        "name": "checkCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "uname",
+                "type": "string"
+            }
+        ],
+        "name": "getBankEth",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "bankAddress",
+                "type": "address"
+            },
+            {
+                "name": "ifAdded",
+                "type": "bool"
+            }
+        ],
+        "name": "updateRating",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "bankAddress",
+                "type": "address"
+            }
+        ],
+        "name": "addRequest",
+        "outputs": [],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            }
+        ],
+        "name": "getCustomerRating",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "eth",
+                "type": "address"
+            }
+        ],
+        "name": "removeBank",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "ethAcc",
+                "type": "address"
+            }
+        ],
+        "name": "getBankReg",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "type": "string"
+            },
+            {
+                "name": "phone",
+                "type": "string"
+            }
+        ],
+        "name": "setPhoneNumber",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "ethAcc",
+                "type": "address"
+            }
+        ],
+        "name": "getBankRating",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "ifIncrease",
+                "type": "bool"
+            }
+        ],
+        "name": "updateRatingCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "type": "address"
+            }
+        ],
+        "name": "checkBank",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "ind",
+                "type": "uint256"
+            }
+        ],
+        "name": "getBankRequests",
+        "outputs": [
+            {
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "password",
+                "type": "string"
+            }
+        ],
+        "name": "setPassword",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "uname",
+                "type": "string"
+            },
+            {
+                "name": "eth",
+                "type": "address"
+            },
+            {
+                "name": "regNum",
+                "type": "string"
+            }
+        ],
+        "name": "addBank",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [],
+        "name": "isPartOfOrg",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            }
+        ],
+        "name": "getCustomerBankRating",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            },
+            {
+                "name": "DataHash",
+                "type": "string"
+            }
+        ],
+        "name": "modifyCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            }
+        ],
+        "name": "getCustomerBankName",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "Uname",
+                "type": "string"
+            }
+        ],
+        "name": "removeCustomer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": true,
+        "type": "function",
+        "stateMutability": "payable"
+    }
+];
 
 //  binary information of the code
 

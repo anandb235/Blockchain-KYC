@@ -10,11 +10,16 @@ contract = solc.compile(code);
 function after2Delay() {
     contractInstance = kycContract.at(deployedContract.address);
     console.log(contractInstance.address);
+    //to show abi uncomment next line
+    // console.log(contractInstancea.abi)
 }
 
 function afterDelay() {
     abiDefinition = JSON.parse(contract.contracts[':kyc'].interface);
     byteCode = contract.contracts[':kyc'].bytecode;
+
+    //Tos show binary data uncomment next line
+    // console.log(byteCode)
     kycContract = web3.eth.contract(abiDefinition);
     deployedContract = kycContract.new({data: byteCode, from: web3.eth.accounts[0], gas: 4700000});
     setTimeout(after2Delay, 3000);
