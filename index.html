@@ -86,9 +86,6 @@
                 <div class="intro-heading">Blockchain KYC</div>
                 <div class="intro-lead-out">Explore the power of Blockchain-KYC</div>
                 <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
-                <button class="enableEthereumButton page-scroll btn btn-xl" onclick="getAccount()">Enable
-                    Ethereum</button>
-                <h2>Account: <span class="showAccount"></span></h2>
             </div>
         </div>
     </header>
@@ -534,11 +531,11 @@
                             <fieldset>
                                 <div class="control-group">
                                     <!-- Name of Bank -->
-                                    <label class="control-label" for="username">Password</label>
+                                    <!-- <label class="control-label" for="username">Password</label> -->
                                     <div class="controls">
                                         <!--Take info from here and store it in the block-chain-->
-                                        <input type="text" id="password" name="password_s" placeholder=""
-                                            class="input-xlarge">
+                                        <button type="button" onclick="getAccountReg()">Connect Wallet</button>
+                                        <span class="showAccountReg" id="password"></span>
                                     </div>
                                 </div>
                             </fieldset>
@@ -612,11 +609,11 @@
                             <fieldset>
                                 <div class="control-group">
                                     <!-- Name of Bank -->
-                                    <label class="control-label" for="username">Password</label>
                                     <div class="controls">
                                         <!--Take info from here and store it in the block-chain-->
-                                        <input type="text" id="password_l" name="password_l" placeholder=""
-                                            class="input-xlarge">
+
+                                        <button type="button" onclick="getAccountLog()">Connect Wallet</button>
+                                        <span class="showAccountLog" id="password"></span>
                                     </div>
                                 </div>
                             </fieldset>
@@ -660,13 +657,25 @@
         }
 
         // const ethereumButton = document.querySelector('#enableEthereumButton');
-        const showAccount = document.querySelector('.showAccount');
+        const showAccountReg = document.querySelector('.showAccountReg');
+        const showAccountLog = document.querySelector('.showAccountLog');
 
-        async function getAccount() {
+
+        async function getAccountReg() {
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
             const account = accounts[0];
             console.log(account)
-            showAccount.innerHTML = account;
+            showAccountReg.innerHTML = account;
+            localStorage.accountAddressReg = account;
+        }
+
+        async function getAccountLog() {
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            const account = accounts[0];
+            console.log(account)
+            showAccountLog.innerHTML = account;
+            localStorage.accountAddressLog = account;
+
         }
     </script>
 </body>

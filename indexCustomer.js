@@ -19,7 +19,7 @@ function onClickLogin() {
         alert("Sorry! Invalid username, password or phone number. Sign up first if you haven't!");
         return false;
     }
-    
+
     //  alert("Welcome "+username_c+" !");
     localStorage.username_c = username_c;
     localStorage.password_c = password_c;
@@ -51,11 +51,11 @@ function onClickSignUp() {
         return false;
     }
 
-    if(phone_no == ""){
+    if (phone_no == "") {
         alert("Please enter your phone number!");
         return false;
     }
-    
+
     if (password_c != c_password_c) {
         alert("Confirm your password correctly!");
         return false;
@@ -67,7 +67,7 @@ function onClickSignUp() {
         return false;
     }
 
-    if(contractInstance.setPhoneNumber.call(username_c, password_c, phone_no) == false){
+    if (contractInstance.setPhoneNumber.call(username_c, password_c, phone_no) == false) {
         alert("Phone number already in use!");
         return false;
     }

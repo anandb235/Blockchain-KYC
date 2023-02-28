@@ -307,10 +307,8 @@ contract kyc {
 
     function checkCustomer(string Uname, string password, string phone) public payable returns(bool) {
         for(uint i = 0; i < allCustomers.length; ++ i) {
-            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, password)) {
-                if(stringsEqual(allCustomers[i].number, phone)){
-                    return false;
-                }
+            if(stringsEqual(allCustomers[i].uname, Uname) && stringsEqual(allCustomers[i].password, password) && stringsEqual(allCustomers[i].number, phone)) {
+                return true;
             }
         }
         return false;

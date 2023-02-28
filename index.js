@@ -12,15 +12,15 @@ var contractInstance = kycContract.at(contractAddress);
 
 //  check if web storage is supported
 
-if (typeof(Storage) == "undefined") {
+if (typeof (Storage) == "undefined") {
     alert("Sorry, your browser does not support web storage. Upgrade to IE9 or contemporary platforms. Thank You for showing interest in us!");
 }
 
-  
-function verify(){
+
+function verify() {
     let a = document.getElementById('verify-otp').innerHTML;
     console.log(a);
-    
+
 }
 
 // console.log(a);
@@ -38,7 +38,7 @@ function onSignUp() {
         alert("Enter a valid username!");
         return;
     }
-    var pass = document.getElementById("password").value;
+    var pass = localStorage.accountAddressReg;//document.getElementById("password").value;
     if (pass == "") {
         alert("Enter a valid password!");
         return;
@@ -66,7 +66,7 @@ function onSignUp() {
 
 function onLogin() {
     var bank_name_l = document.getElementById("username_l").value;
-    var pass_l = document.getElementById("password_l").value;
+    var pass_l = localStorage.accountAddressLog; //document.getElementById("password_l").value;
 
     //  validate input
 
@@ -79,9 +79,9 @@ function onLogin() {
         return;
     }
     if (contractInstance.checkBank.call(bank_name_l, pass_l, {
-            from: pass_l,
-            gas: 4700000
-        }) == "null") {
+        from: pass_l,
+        gas: 4700000
+    }) == "null") {
         alert("Bank not in network. Sign up before proceeding further. Thank You!");
         return;
     }
