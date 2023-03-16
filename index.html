@@ -35,7 +35,10 @@
     <script type="text/javascript" src="./dist/web3.min.js"></script>
 
     <script language="JavaScript" type="text/javascript" src="./js/contractDetails.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./index.js"></script>
+    
+    <!-- <script src="https://www.jsdelivr.com/package/npm/ipfs-http-client"
+        integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+        crossorigin="anonymous"></script> -->
 
     <!-- Navigation bar-->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -563,6 +566,7 @@
 
                 <!--Modal Footer-->
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="sign_up" onclick="ipfsTest()">Test</button>
                     <button type="submit" class="btn btn-primary" data-dismiss="modal" id="sign_up"
                         onclick="onSignUp()">Sign up</button>
                 </div>
@@ -678,6 +682,8 @@
 
         }
     </script>
+    <script language="JavaScript" type="text/javascript" src="./index.js"></script>
+    <script language="JavaScript" type="module" src="./ipfs.js"></script>
 </body>
 
 </html>

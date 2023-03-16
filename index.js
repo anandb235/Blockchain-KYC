@@ -1,6 +1,5 @@
 //  Web3 intializer
 //  ABI definition, Binary Data and contract Address in contractDetails.js
-
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 var kycContract = web3.eth.contract(abi);
 var deployedContract = kycContract.new({
@@ -92,4 +91,5 @@ function onLogin() {
     localStorage.bank_eth_account = pass_l;
     window.location = './resources/bankHomePage.html';
 }
+
 

@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ipfs-http-client": "^60.0.0",
     "solc": "^0.4.26",
     "web3": "^0.20.1"
   }
